@@ -2,7 +2,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Vettore<String> x = new Vettore<>(0, 0);
         for (int i=0; i<23; i++)
-            x.add("Juve_" + i);
+            x.add("spurs" + i);
         System.out.println(x);
 
         

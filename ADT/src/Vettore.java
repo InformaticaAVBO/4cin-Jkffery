@@ -35,5 +35,4 @@ public class Vettore<T> {
             s += v[i] + "\t";
         return s;
     }
-
 }
