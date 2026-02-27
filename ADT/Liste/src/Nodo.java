@@ -3,22 +3,22 @@
 ** Ogni nodo contiene un valore di tipo String e un riferimento al nodo successivo.
 */
 
-public class Nodo {
+public class Nodo<T> {
     
-    private String value;
-    private Nodo next;
+    private T value;
+    private Nodo<T> next;
     
-    public Nodo( String v ) {
+    public Nodo( T v ) {
         value = v;
         next = null;
     }
 
-    public void setNext( Nodo n ) { next = n; }    
-    public Nodo getNext() { return next; }    
-    public void setValue( String v ) { value = v; }  
-    public String getValue() { return value; }  
+    public void setNext( Nodo<T> n ) { next = n; }    
+    public Nodo<T> getNext() { return next; }    
+    public void setValue( T v ) { value = v; }  
+    public T getValue() { return value; }  
 
     public String toString() {
-        return value;
+        return value == null ? "null" : value.toString();
     }
-    
+}

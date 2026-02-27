@@ -1,21 +1,20 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-    }
-}
-	public static void main(String[] args) {
-
         // crea una lista di stringhe con dati di prova, la manipola con i metodi presenti ed infine la stampa
-        Lista l = new Lista();
-	    l.add( "Mario" );
-	    l.addHead(new Nodo("Prima di Mario"));
-	    l.addTail(new Nodo("Dopo di Mario"));
-        
-		System.out.println("Lunghezza lista: " + l.getLength());
-		System.out.println("Contiene 'Mario'? " + l.exists("Mario"));
-		System.out.println("Contiene 'Luigi'? " + l.exists("Luigi"));
-		System.out.println(l);
-		System.out.println("Rimuovo 'Mario': " + l.remove("Mario"));
-		System.out.println(l);
-	}
+        ListaOrdinata<String> l = new ListaOrdinata<>();
+        l.add( v:"Mario" );
+        l.add( v:"Luigi" );
+        l.add( v:"Iris" );
+        l.add( v:"Valerio" );
+        l.add( v:"Giuseppe" );
+        l.add( v:"Jeffery" );
+        System.out.println(l);
+
+        ListaOrdinata<Bici> lb = new ListaOrdinata<>();
+        lb.add( v:new Bici( pollici: 24, Colori.BLU ) );
+        lb.add( v:new Bici( pollici: 21, Colori.ROSSO ) );
+        lb.add( v:new Bici( pollici: 22, Colori.BIANCO ) );
+        lb.add( v:new Bici( pollici: 19, Colori.NERO ) );
+        System.out.println(lb);
+    }
 }

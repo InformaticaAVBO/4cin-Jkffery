@@ -5,7 +5,7 @@
 
 public class Lista {
     
-    Nodo root;
+    Nodo<String> root;
     
     public Lista() {
         root = null;
@@ -16,7 +16,7 @@ public class Lista {
     }
 
     public int getLength() {
-        Nodo tmp = root;
+        Nodo<String> tmp = root;
         int l = 0;
         while (tmp!=null) {
             l++;
@@ -26,21 +26,21 @@ public class Lista {
     }
 
     public void add( String s ) {
-        Nodo n = new Nodo(s);
+        Nodo<String> n = new Nodo<>(s);
         addTail(n);
     }
 
-    public void addHead( Nodo n ) {
-        Nodo tmp = root;
+    public void addHead( Nodo<String> n ) {
+        Nodo<String> tmp = root;
         root = n;
         n.setNext(tmp);
     }
 
-    public void addTail( Nodo n ) {
+    public void addTail( Nodo<String> n ) {
         if (root==null) {
             root = n;
         } else {
-            Nodo temp = root;
+            Nodo<String> temp = root;
             while (temp.getNext()!=null) temp=temp.getNext();
             temp.setNext(n);
         }
@@ -52,7 +52,7 @@ public class Lista {
             root = root.getNext();
             return true;
         }
-        Nodo tmp=root, succ=root.getNext();
+        Nodo<String> tmp=root, succ=root.getNext();
         while (succ!=null) {
             if (succ.getValue().equals(s)) {
                 tmp.setNext(succ.getNext());
@@ -65,7 +65,7 @@ public class Lista {
     }
 
     public boolean exists( String s ) {
-        Nodo tmp = root;
+        Nodo<String> tmp = root;
         while (tmp!=null) {
             if (tmp.getValue().equals(s)) return true;
             tmp = tmp.getNext();
@@ -73,8 +73,8 @@ public class Lista {
         return false;
     }
 
-    public Nodo find( String s ) {
-        Nodo tmp = root;
+    public Nodo<String> find( String s ) {
+        Nodo<String> tmp = root;
         while (tmp!=null) {
             if (tmp.getValue().equals(s)) return tmp;
             tmp = tmp.getNext();
@@ -84,10 +84,11 @@ public class Lista {
 
     public String toString() {
         String s = "La lista contiene: ";
-        Nodo temp = root;
+        Nodo<String> temp = root;
         while (temp!=null) {
             s += temp.getValue() + " - ";
             temp = temp.getNext();
         }
         return s + "\n";
     }
+}
